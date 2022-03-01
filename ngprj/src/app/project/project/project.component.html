@@ -18,6 +18,7 @@
 
 <hr>
 <p *ngIf="selectedProject">Progetto selezionato: {{ selectedProject.name }}</p>
+<ngprj-detail></ngprj-detail>
 
 <hr>
 <form #f="ngForm" (ngSubmit)="submitProjectForm(f)" class="row g-3">
