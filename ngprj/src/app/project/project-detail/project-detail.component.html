@@ -1,14 +1,8 @@
-<div class="container-fluid py-5">
-  <ngtsk-card>
-    <ng-container data-body>
+<div class="container-fluid py-5" *ngIf="project">
+  <div class="card">
+    <div class="body">
       <h1 class="display-5 fw-bold">{{project.name}}</h1>
       <p class="col-md-8 fs-4">{{project.description}}</p>
-    </ng-container>
-    <ng-container data-footer>
-      <p>
-        <span>Codice: {{project.code}} - Data Inizio: {{project.start | date:'dd/MM/yyyy'}}</span>
-        <span *ngIf="project.end">- Data Fine: {{project.end | date:'dd/MM/yyyy'}}</span>
-      </p>
-    </ng-container>
-  </ngtsk-card>
+    </div>
+  </div>
 </div>
