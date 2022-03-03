@@ -4,10 +4,4 @@
 <ngprj-project-detail [project]="selectedProject"></ngprj-project-detail>
 
 <hr />
-<ngprj-project-form
-  (submitted)="submitProjectForm($event)"
-></ngprj-project-form>
-
-<ng-template #noProjects>
-  <p>Non e' presente nessun progetto</p>
-</ng-template>
+<ngprj-project-form (submitted)="submitProjectForm($event)"></ngprj-project-form>
