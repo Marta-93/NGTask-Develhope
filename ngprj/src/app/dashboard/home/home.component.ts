@@ -9,9 +9,7 @@ import { LogService } from '@app/shared/log.service';
 export class HomeComponent implements OnInit {
   title = "NGPrj";
 
-  constructor(private logService: LogService) { 
-    
-  }
+  constructor(private logService: LogService) {}
 
   ngOnInit(): void {
   }

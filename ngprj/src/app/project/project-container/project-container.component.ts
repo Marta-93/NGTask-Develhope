@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { NgForm } from '@angular/forms';
 import { Project } from '@app/models/Project';
-import { LogService } from '@app/shared/log.service';
+import { Observable, Subscription } from 'rxjs';
 import { ProjectService } from '../project.service';
 
 @Component({
@@ -10,17 +9,21 @@ import { ProjectService } from '../project.service';
   styleUrls: ['./project-container.component.css']
 })
 
-export class ProjectContainerComponent implements OnInit {
+export class ProjectContainerComponent implements OnInit{
+
+  subscription!: Subscription;
   selectedProject!: Project;
 
-  projects: Project[] = [];
+  //projects: Project[] = [];
+  projects$!: Observable<Project[]>;
 
   constructor(private projectService: ProjectService) {}
 
   ngOnInit(): void {
-    this.projectService.getAll().subscribe(data => {
-      this.projects = data;
-    });
+    this.projects$ = this.projectService.getAll();
+    //this.subscription = this.projectService.getAll().subscribe(data => {
+    // this.projects = data;
+    // });
   }
 
   selectProject(project: Project) {
