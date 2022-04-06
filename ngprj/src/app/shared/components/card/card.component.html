@@ -1,8 +1,8 @@
-<div class="card">
+<div class="card" [ngClass]="classes">
   <div class="card-body">
-    <p>Sono il body</p>
+    <ng-content select="[data-body]"></ng-content>
   </div>
   <div class="card-footer">
-    <p>Sono il footer</p>
+    <ng-content select="[data-footer]"></ng-content>
   </div>
 </div>

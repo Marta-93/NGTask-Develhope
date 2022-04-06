@@ -10,7 +10,7 @@ import { DashboardModule } from './modules/dashboard/dashboard.module';
 @NgModule({
   declarations: [
     AppComponent,
-    NavbarComponent
+    NavbarComponent,
   ],
   imports: [
     BrowserModule,
