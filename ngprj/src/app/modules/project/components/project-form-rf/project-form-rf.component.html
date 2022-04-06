@@ -1,4 +1,4 @@
-<form class="row g-3" [formGroup]="projectForm" (ngSubmit)="submit()">
+<form class="row g-3" formGroup="projectForm" (ngSubmit)="submit()">
   <div class="col-md-4">
     <label for="validationDefaultUsername" class="form-label">Chiusura</label>
     <input type="date" name="end" class="form-control" placeholder="Data Fine" formControlName="end">
@@ -16,7 +16,7 @@
         Task</button>
     </div>
     <div *ngFor="let skill of tasks.controls; let i=index">
-        <div class="input-group mb-3" [formGroupName]="i">
+        <div class="input-group mb-3" formGroupName="i">
           <input type="text" class="form-control" placeholder="task name" formControlName="name">
           <button class="btn btn-danger" type="button" (click)="deleteTask(i)">X</button>
         </div>
